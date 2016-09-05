@@ -1,0 +1,64 @@
+input {
+  display: inline-block;
+  border: 2px solid $rgba-primary-0;
+  border-radius: 6px;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: $input-padding;
+  font-weight: 100;
+  color: $rgba-secondary-1-2;
+
+  &:focus {
+    outline: none;
+    border-color: $rgba-secondary-1-0;
+  }
+}
+
+.btn-focus {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000', GradientType=0);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(rgba(0, 0, 0, 0)),color-stop(40%,rgba(0,0,0,.05)),to(rgba(0,0,0,.1)));
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0),rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
+    background-image: -moz-linear-gradient(top,rgba(0,0,0,.05) 0,rgba(0,0,0,.1));
+    background-image: -o-linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
+    background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
+}
+
+.btn {
+  border: 0;
+  text-decoration: none;
+  border-radius: 2px;
+  padding: 0.2rem 0.75rem;
+  box-sizing: border-box;
+  font-weight: 100;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    @extend .btn-focus;
+  }
+
+  &:hover {
+    @extend .btn-focus;
+  }
+
+}
+
+.btn-default {
+  background-color: $rgba-primary-0;
+  color: #fff;
+
+  &:hover {
+    background-color: $rgba-primary-3;
+  }
+}
+
+
+.btn-green {
+  @extend .btn-default;
+
+  &:hover {
+    background-color: $rgba-secondary-2-1;
+  }
+}
