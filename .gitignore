@@ -40,3 +40,9 @@ Temporary Items
 .sass-cache
 elm.js
 admin.js
+
+# Haskell
+*.hi
+*.o
+dist
+TAGS
