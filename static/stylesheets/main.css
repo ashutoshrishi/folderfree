@@ -112,7 +112,7 @@ input {
 .item-list-column {
   box-sizing: border-box;
   border-right: 1px dashed #247673;
-  border-left: 1px solid #d8d8d8;
+  min-width: 320px;
   height: 100%; }
   .item-list-column .item-list-header {
     padding: 8px 10px;

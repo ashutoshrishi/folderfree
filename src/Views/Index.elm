@@ -70,13 +70,9 @@ view : Model -> Html Msg
 view model =
     div [ class "page" ]
         [ row' [ "full-row" ]
-            [ col_ 12
-                4
-                4
+            [ col_ 12 4
                 [ App.map ItemListMsg <| ItemList.view model.leftList ]
-            , col_ 12
-                8
-                8
+            , col_ 12 8
                 [ App.map ItemDisplayMsg <|
                     ItemDisplay.view model.display
                 ]

@@ -72,9 +72,7 @@ navbarNav links =
                     ]
                 ]
     in
-        Flex.col_ 12
-            6
-            6
+        Flex.col_ 12 6
             [ ul [ class "navbar-nav" ] <|
                 List.map makeLink links
             ]

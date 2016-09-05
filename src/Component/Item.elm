@@ -1,17 +1,19 @@
-module Component.Item exposing (Item, filterItems)
-
+module Component.Item exposing (Item, filterItems, Tag(..))
 
 import String
 import List
 
 
 type alias Item =
-    { title      : String
-    , desc       : String
-    , categories : List String
+    { title : String
+    , desc : String
+    , tags : List Tag
     }
 
 
+type Tag
+    = All
+    | CustomTag String
 
 
 
@@ -33,4 +35,3 @@ filterItems term items =
                         ]
     in
         List.filter hasTerm items
-    

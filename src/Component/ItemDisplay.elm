@@ -2,7 +2,6 @@ module Component.ItemDisplay exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
--- import FlexboxGrid.Html exposing (..)
 import Component.Item exposing (Item)
 
 -- model

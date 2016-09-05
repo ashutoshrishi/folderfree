@@ -3,9 +3,10 @@ module Component.ItemList exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onInput, onClick)
+import FlexboxGrid.Html as Flex
 import List
 import String
-import Component.Item exposing (Item, filterItems)
+import Component.Item exposing (Item, filterItems, Tag(..))
 
 
 -- Model
@@ -25,11 +26,11 @@ init =
         items =
             [ { title = "Hello, World"
               , desc = "This is a sample description."
-              , categories = [ "Self" ]
+              , tags = [ CustomTag "Self" ]
               }
             , { title = "A Very Important Document"
               , desc = "Contains important information."
-              , categories = [ "Self", "University" ]
+              , tags = [ CustomTag "Self", CustomTag "University" ]
               }
             ]
     in
@@ -93,7 +94,14 @@ view model =
     in
         div [ class "item-list-column" ]
             [ div [ class "item-list-header" ]
-                [ text "Document List" ]
+                [ Flex.row_
+                    [ Flex.colXs_ [ text "Document List" ]
+                    , Flex.colXs_
+                        [ div [ style [ ( "text-align", "right" ) ] ]
+                            [ text "Showing All Tags" ]
+                        ]
+                    ]
+                ]
             , ul [ class "item-list" ] <|
                 searchItem
                     :: viewItemList model
@@ -109,18 +117,22 @@ viewItem : Item -> Html Msg
 viewItem item =
     let
         makeLabel s =
-            span [ class "label" ]
-                [ text s ]
+            case s of
+                All ->
+                    span [] []
+
+                CustomTag s ->
+                    span [ class "label" ]
+                        [ text s ]
     in
         li
-        [ class "item-box"
-        , onClick (Selected item)
-        ]
-        [ div [ class "item-title" ]
-            [ text item.title ]
-        , div [ class "item-category-row"]
-            <| List.map makeLabel item.categories
-        , div [ class "item-content" ]
-            [ text item.desc ]
-        ]
-
+            [ class "item-box"
+            , onClick (Selected item)
+            ]
+            [ div [ class "item-title" ]
+                [ text item.title ]
+            , div [ class "item-category-row" ] <|
+                List.map makeLabel item.tags
+            , div [ class "item-content" ]
+                [ text item.desc ]
+            ]

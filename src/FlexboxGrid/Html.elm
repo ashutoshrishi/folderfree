@@ -8,7 +8,6 @@ import String exposing (join)
 divWithClass : List String -> List (Html msg) -> Html msg
 divWithClass classes =
     div [ class <| join " " classes ]
-        
 
 
 
@@ -73,22 +72,34 @@ rowMiddle_ =
 -- * Col
 
 
-col_ : Int -> Int -> Int -> List (Html msg) -> Html msg
-col_ xs md lg =
+col_ : Int -> Int -> List (Html msg) -> Html msg
+col_ xs md =
+    col__ xs md md
+
+
+col__ : Int -> Int -> Int -> List (Html msg) -> Html msg
+col__ xs md lg =
     divWithClass
         [ "col-xs-" ++ toString xs
         , "col-md-" ++ toString md
         , "col-lg-" ++ toString lg
         ]
 
-col' : Int -> Int -> Int -> List String -> List (Html msg) -> Html msg
-col' xs md lg classes =
+
+col' : Int -> Int -> List String -> List (Html msg) -> Html msg
+col' xs md classes =
+    col'' xs md md classes
+
+
+col'' : Int -> Int -> Int -> List String -> List (Html msg) -> Html msg
+col'' xs md lg classes =
     divWithClass <|
         [ "col-xs-" ++ toString xs
         , "col-md-" ++ toString md
         , "col-lg-" ++ toString lg
-        ] ++ classes 
-        
+        ]
+            ++ classes
+
 
 colXs_ : List (Html msg) -> Html msg
 colXs_ =
