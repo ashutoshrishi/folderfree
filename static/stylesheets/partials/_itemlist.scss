@@ -14,7 +14,7 @@
     border-bottom: 1px solid #d8d8d8;
     background-color: #f5f5f5;
   }
-  
+
   .item-list {
     list-style-type: none;
     margin: 0;
@@ -26,7 +26,7 @@
     padding: 10px 10px;
     padding-bottom: 15px;
     box-sizing: border-box;
-    
+
     &:hover {
       border-left: 1px solid $rgba-primary-4;
       background-color: #f5f5f5;
@@ -35,7 +35,7 @@
 
     .item-title {
       color: $rgba-primary-0;
-      font-size: 1.2em;      
+      font-size: 1.2em;
     }
 
     .item-content {
@@ -46,7 +46,7 @@
       padding: 5px 0px;
       font-size: 0.75em;
       .label {
-        background-color: $rgba-secondary-1-0;
+        background-color: $bright-green;
         color: white;
         border-radius: 4px;
         padding: 2px 5px;
@@ -59,7 +59,7 @@
     margin: 0;
     padding: 0;
     background-color: $bright-green;
-    
+
     &:hover {
       background-color: $bright-green;
       cursor: inherit;
@@ -76,5 +76,24 @@
   input {
     width: 100%;
   }
-  
+
+}
+
+
+.item-display {
+  padding-top: 10px;
+  padding-right: 10px;
+
+  .item-display-header {
+    border-bottom: 1px solid #d8d8d8;
+    padding-bottom: 10px;
+
+    .item-display-title {
+      font-size: 1.3em;
+    }
+
+    .item-display-desc {
+    }
+
+  }
 }

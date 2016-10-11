@@ -42,7 +42,8 @@ view : Model -> Html Msg
 view model =
     let
         links =
-            [ ( "Home", "#", "folder-o" )
+            [ ( "Add Document", "#", "plus")
+            , ( "Home", "#", "folder-o" )
             , ( "About", "#", "gears" )
             ]
     in

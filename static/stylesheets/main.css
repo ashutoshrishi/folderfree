@@ -143,7 +143,7 @@ input {
       padding: 5px 0px;
       font-size: 0.75em; }
       .item-list-column li .item-category-row .label {
-        background-color: #2b5d7b;
+        background-color: #23ab74;
         color: white;
         border-radius: 4px;
         padding: 2px 5px;
@@ -151,9 +151,9 @@ input {
   .item-list-column .item-form {
     margin: 0;
     padding: 0;
-    background-color: #00e086; }
+    background-color: #23ab74; }
     .item-list-column .item-form:hover {
-      background-color: #00e086;
+      background-color: #23ab74;
       cursor: inherit; }
 
 /***************************************************************************/
@@ -163,5 +163,14 @@ input {
   padding: 10px 10px; }
   .search input {
     width: 100%; }
+
+.item-display {
+  padding-top: 10px;
+  padding-right: 10px; }
+  .item-display .item-display-header {
+    border-bottom: 1px solid #d8d8d8;
+    padding-bottom: 10px; }
+    .item-display .item-display-header .item-display-title {
+      font-size: 1.3em; }
 
 /*# sourceMappingURL=main.css.map */
